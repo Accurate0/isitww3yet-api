@@ -16,7 +16,7 @@ def get():
     return jsonify(
         {
             "status": "Maybe",
-            "emoji": "🧐",
+            "emoji": "😳",
         }
     )
 
