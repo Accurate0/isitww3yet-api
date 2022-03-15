@@ -5,6 +5,15 @@
     "variables": {},
     "resources": [
         {
+            "type": "Microsoft.ApiManagement/service/api-version-sets",
+            "apiVersion": "2018-06-01-preview",
+            "name": "general-apim/622f2c70b5155162e50cbe11",
+            "properties": {
+                "displayName": "WW3 API",
+                "versioningScheme": "Segment"
+            }
+        },
+        {
             "type": "Microsoft.ApiManagement/service/apis",
             "apiVersion": "2021-08-01",
             "name": "general-apim/WW3-API",
