@@ -5,8 +5,8 @@
     "variables": {},
     "resources": [
         {
-            "type": "Microsoft.ApiManagement/service/api-version-sets",
-            "apiVersion": "2018-06-01-preview",
+            "type": "Microsoft.ApiManagement/service/apiVersionSets",
+            "apiVersion": "2019-01-01",
             "name": "general-apim/622f2c70b5155162e50cbe11",
             "properties": {
                 "displayName": "WW3 API",
