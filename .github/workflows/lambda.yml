@@ -13,8 +13,8 @@ concurrency:
 jobs:
   deploy:
     defaults:
-    run:
-      working-directory: "./v2"
+      run:
+        working-directory: "./v2"
     runs-on: ubuntu-latest
 
     steps:
