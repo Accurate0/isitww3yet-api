@@ -36,6 +36,28 @@
             }
         },
         {
+            "type": "Microsoft.ApiManagement/service/apis",
+            "apiVersion": "2017-03-01",
+            "name": "general-apim/WW3-API-v2",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', 'general-apim', 'WW3ApiSegment')]"
+            ],
+            "properties": {
+                "displayName": "WW3 API",
+                "apiRevision": "1",
+                "subscriptionRequired": false,
+                "serviceUrl": "https://m8dxmw1fj0.execute-api.ap-southeast-2.amazonaws.com/ww3-api/",
+                "path": "ww3",
+                "protocols": [
+                    "http",
+                    "https"
+                ],
+                "isCurrent": true,
+                "apiVersion": "v2",
+                "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', 'general-apim', 'WW3ApiSegment')]"
+            }
+        },
+        {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2017-03-01",
             "name": "general-apim/WW3-API/Status",
@@ -51,11 +73,38 @@
             }
         },
         {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2017-03-01",
+            "name": "general-apim/WW3-API-v2/Status",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'general-apim', 'WW3-API-v2')]",
+            ],
+            "properties": {
+                "displayName": "Status",
+                "method": "GET",
+                "urlTemplate": "/status",
+                "templateParameters": [],
+                "responses": []
+            }
+        },
+        {
             "type": "Microsoft.ApiManagement/service/apis/policies",
             "apiVersion": "2019-01-01",
             "name": "general-apim/WW3-API/policy",
             "dependsOn": [
                 "[resourceId('Microsoft.ApiManagement/service/apis', 'general-apim', 'WW3-API')]"
+            ],
+            "properties": {
+                "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
+                "format": "xml"
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/policies",
+            "apiVersion": "2019-01-01",
+            "name": "general-apim/WW3-API-v2/policy",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'general-apim', 'WW3-API-v2')]",
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
