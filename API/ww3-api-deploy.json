@@ -40,7 +40,7 @@
             "apiVersion": "2017-03-01",
             "name": "general-apim/WW3-API-v2",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', 'general-apim', 'WW3ApiSegment')]"
+                "[resourceId('Microsoft.ApiManagement/service/api-version-sets', 'general-apim', 'WW3ApiSegment')]"
             ],
             "properties": {
                 "displayName": "WW3 API",
@@ -54,7 +54,7 @@
                 ],
                 "isCurrent": true,
                 "apiVersion": "v2",
-                "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', 'general-apim', 'WW3ApiSegment')]"
+                "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/api-version-sets', 'general-apim', 'WW3ApiSegment')]"
             }
         },
         {
