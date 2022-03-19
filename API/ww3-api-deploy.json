@@ -92,14 +92,6 @@
                                 "contentType": "application/json"
                             }
                         ]
-                    },
-                    {
-                        "statusCode": 404,
-                        "representations": [
-                            {
-                                "contentType": "application/json"
-                            }
-                        ]
                     }
                 ]
             }
