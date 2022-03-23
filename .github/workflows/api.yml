@@ -1,7 +1,8 @@
 name: api
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - API/**
       - .github/workflows/api.yml
@@ -14,13 +15,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: actions/checkout@main
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Run ARM deploy
-      uses: azure/arm-deploy@v1
-      with:
-        resourceGroupName: 'general-api-group'
-        template: ./API/ww3-api-deploy.json
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: "general-api-group"
+          template: ./API/ww3-api-deploy.json
