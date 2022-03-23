@@ -46,7 +46,7 @@
                 "displayName": "WW3 API",
                 "apiRevision": "1",
                 "subscriptionRequired": false,
-                "serviceUrl": "https://m8dxmw1fj0.execute-api.ap-southeast-2.amazonaws.com/ww3-api/",
+                "serviceUrl": "https://qq4omhwvt7.execute-api.ap-southeast-2.amazonaws.com/WW3Api/",
                 "path": "ww3",
                 "protocols": [
                     "http",
